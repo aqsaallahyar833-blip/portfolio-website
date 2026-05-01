@@ -1,0 +1,7 @@
+Screenshot saved. To use this:
+
+1. Download the portfolio-website screenshot from your browser
+2. Save as "project-portfolio.jpg" in this folder
+3. The HTML will reference it as a local file
+
+For now, I'll update the HTML to use these local files once you upload them.
