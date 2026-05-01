@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Aqsa Dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Full-Page Animated Background -->
+    <div class="page-background">
+        <canvas id="pageBackgroundCanvas"></canvas>
+        <div class="page-background-overlay"></div>
+    </div>
+
+    <!-- Floating Social Bar -->
+    <div class="floating-social-bar">
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+            class="social-icon-link">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+            class="social-icon-link">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Twitter"
+            class="social-icon-link">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aqsa@example.com&su=Hello%20Aqsa%20Dev&body=Hi%20Aqsa%2C%0A%0AI%20would%20like%20to%20connect%20about%20..."
+            target="_blank" rel="noopener noreferrer" aria-label="Gmail" class="social-icon-link">
+            <i class="fab fa-google"></i>
+        </a>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Aqsa Dev</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button id="darkModeToggle" class="dark-mode-btn">🌙</button>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>I'm always interested in new opportunities and collaborations. Let's discuss how we can work
+                        together!</p>
+                    <div class="contact-details">
+                        <p>📧 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aqsaallahyar833@gmail.com&su=Hello%20Aqsa&body=Hi%20Aqsa%2C%0A%0AI%20am%20reaching%20out%20via%20your%20portfolio%20site..."
+                                target="_blank" rel="noopener noreferrer">aqsaallahyar833@gmail.com</a></p>
+                        <p>📍 Sargodha, Pakistan</p>
+                    </div>
+                    <div class="social-links-section">
+                        <h3>Connect With Me</h3>
+                        <div class="social-links-large">
+                            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"
+                                class="social-link linkedin" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span class="social-text">LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"
+                                class="social-link github" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                                <span class="social-text">GitHub</span>
+                            </a>
+                            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer"
+                                class="social-link twitter" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span class="social-text">Twitter</span>
+                            </a>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aqsa@example.com&su=Hello%20Aqsa%20Dev&body=Hi%20Aqsa%2C%0A%0AI%20would%20like%20to%20connect%20about%20..."
+                                target="_blank" rel="noopener noreferrer" class="social-link gmail" aria-label="Gmail">
+                                <i class="fab fa-google"></i>
+                                <span class="social-text">Gmail</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Aqsa | Web Developer</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
