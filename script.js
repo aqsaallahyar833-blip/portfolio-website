@@ -416,62 +416,74 @@ window.addEventListener('load', () => {
     });
 });
 
-// Contact Form Handling with EmailJS
+// Contact Form Handling with Formspree
 (function () {
-    // Replace these with your actual EmailJS credentials from https://www.emailjs.com/
-    // 1. Sign up at EmailJS
-    // 2. Create an email service (Gmail, Outlook, etc.)
-    // 3. Create an email template
-    // 4. Get your Service ID, Template ID, and Public Key
-
-    const serviceID = 'your_service_id';  // Replace with your EmailJS Service ID
-    const templateID = 'your_template_id'; // Replace with your EmailJS Template ID
-    const publicKey = 'your_public_key';   // Replace with your EmailJS Public Key
-
-    // Initialize EmailJS
-    emailjs.init(publicKey);
-
     const form = document.getElementById('contactForm');
+    const messageDiv = document.getElementById('formMessage');
+
     if (form) {
         form.addEventListener('submit', function (e) {
-            e.preventDefault();
-
             // Show loading state
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
 
-            // Get form data
-            const formData = {
-                from_name: document.getElementById('name').value,
-                from_email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value,
-                to_name: 'Aqsa' // Replace with your name
-            };
+            // Get form data for feedback
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
 
-            // Send email
-            emailjs.send(serviceID, templateID, formData)
-                .then(function (response) {
-                    alert('Message sent successfully! Thank you for reaching out.');
-                    form.reset();
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                }, function (error) {
-                    alert('Failed to send message. Please try again or contact me directly.');
-                    console.error('EmailJS error:', error);
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                });
+            // Validate inputs
+            if (!name || !email || !message) {
+                showMessage('Please fill in all fields', 'error');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                e.preventDefault();
+                return;
+            }
+
+            // Show success message before form submission
+            setTimeout(() => {
+                showMessage('✓ Message sent successfully! I\'ll get back to you soon.', 'success');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1000);
         });
+
+        function showMessage(text, type) {
+            messageDiv.textContent = text;
+            messageDiv.className = `form-message ${type}`;
+            messageDiv.style.display = 'block';
+
+            // Auto-hide success messages after 5 seconds
+            if (type === 'success') {
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+            }
+        }
     }
 })();
 
+
+function sendMail() {
+    let params = {
+        from_name: document.getElementById("name").value,
+        email_id: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+        subject: document.getElementById("subject").value
+    }
+    emailjs.send("service_4v80mga", "template_su7inrq", params).then(function (res) {
+        alert("Your message has been sent successfully! I will get back to you soon.");
+    }
+
+}
+
 // Mobile Menu Toggle (if needed in future)
-const menuToggle = () => {
+function menuToggle() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
-};
+}
 
 console.log('✨ Welcome to Aqsa Dev Portfolio! ✨');
